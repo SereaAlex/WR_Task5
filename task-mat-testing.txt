@@ -1,0 +1,30 @@
+Task: Testing mats
+
+Explanation of input file generation:
+
+The input record "mat.In" is generated using the create_input function described in the mat.Py Python script. This characteristic requires several parameters to adapt the era device:
+
+filename: The name of the output record to which the matrix can be written.
+Num_matrices: Number of matrices to generate.
+Min_rows, max_rows: Minimum and maximum number of rows for each matrix.
+Min_cols, max_cols: Minimum and maximum number of columns for each matrix.
+For example, the command create_input("mat.In", 10, five, 10, 5, 10) will generate an input document named "mat.In" containing 10 randomly generated matrices in which each matrix has a random kind of rows. and columns between 5 and 10.
+
+Proof of correctness:
+
+To reveal the correctness of the data in the output document "mat.Out", we examine the results obtained from a Python script with guiding calculations for a small subset of the generated matrices.
+
+For example, let the following matrix from the enter entry linger in your mind:
+
+4x4:1010
+0101
+1010
+0101
+Depending on the needs, we need to count different amounts of distant '1's, clusters of connected '1s and clusters of 3 related '1s in this matrix.
+
+Isolated Ones: There are four remote ones on this die.
+Clusters of related "1s": There are no clusters of related "1s" in this matrix.
+Clusters of three connected "1s": There are no clusters of three connected "1s" in this matrix.
+Based on these calculations, the expected output for this matrix should be 4 0 0.
+
+After looping through the Python script with this enter file, we should find the same effects in the corresponding line of the "mat.Out" output record.
